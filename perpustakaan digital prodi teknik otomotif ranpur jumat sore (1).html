@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)file:///C:/Users/ahmad/Downloads/Perpustakaan%20Digital%20Prodi%20Teknik%20Otomotif%20Ranpur.html -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perpustakaan Digital Prodi Teknik Otomotif Ranpur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="file:///C:/Users/ahmad/Downloads/Perpustakaan%20Digital%20Prodi%20Teknik%20Otomotif%20Ranpur_files/css2" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #06152b;
+      --card-bg: #0b1e38;
+      --card-border: #18355a;
+      --card-banner: #165ab7;
+      --accent-amber: #e6a728;
+      --accent-amber-hover: #c98e18;
+      --text-white: #ffffff;
+      --text-muted: #95abcb;
+      --btn-blue: #1c64c4;
+      --btn-blue-hover: #1552a3;
+      --btn-green: #107c41;
+      --btn-green-hover: #0b5e31;
+      --btn-danger: #c53030;
+      --btn-purple: #4a2882;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-white); padding: 24px; min-height: 100vh; }
+    .container { max-width: 1280px; margin: 0 auto; }
+
+    /* HEADER */
+    .header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 18px; margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .header-left { display: flex; align-items: center; gap: 16px; }
+    .logo-container {
+      position: relative; width: 64px; height: 64px; border-radius: 14px;
+      overflow: hidden; border: 2px solid #234d80; background: #081a33;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45); cursor: pointer;
+    }
+    .logo-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .logo-fallback {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: radial-gradient(circle, #0e7a33, #09471d); color: #fff;
+    }
+    .header-text h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; }
+    .header-text p { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+
+    .live-monitor-bar {
+      display: flex; gap: 10px; align-items: center;
+      background: #091c36; border: 1px solid #1c3d69;
+      padding: 6px 14px; border-radius: 30px; font-size: 12px;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px; background: #10b981; border-radius: 50%;
+      box-shadow: 0 0 8px #10b981; animation: pulse 1.6s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    /* ACTION BAR */
+    .action-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 24px; }
+    .search-box { flex: 1; min-width: 250px; }
+    .search-input {
+      width: 100%; background: #ffffff; color: #1a202c; border: 1px solid #cbd5e1;
+      padding: 10px 14px; border-radius: 8px; font-size: 13.5px; outline: none;
+    }
+    .search-input:focus { box-shadow: 0 0 0 3px rgba(22, 90, 183, 0.4); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 6px; padding: 9px 15px; border-radius: 8px; font-size: 13px;
+      font-weight: 600; cursor: pointer; border: none; transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-amber { background: var(--accent-amber); color: #0b1524; }
+    .btn-amber:hover { background: var(--accent-amber-hover); }
+    .btn-navy { background: #163760; color: #ffffff; border: 1px solid #285185; }
+    .btn-navy:hover { background: #204878; }
+    .btn-purple { background: var(--btn-purple); color: #ffffff; border: 1px solid #6b3bb8; }
+    .btn-purple:hover { background: #5b32a1; }
+    .btn-monitor { background: #0e633d; color: #ffffff; border: 1px solid #1ba365; }
+    .btn-monitor:hover { background: #12794b; }
+    .btn-outline { background: transparent; color: var(--text-muted); border: 1px solid #23426b; }
+    .btn-outline:hover { background: #10243d; color: #ffffff; }
+
+    /* STATS GRID */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .stat-card { background: #081a33; border: 1px solid var(--card-border); border-radius: 12px; padding: 16px 18px; }
+    .stat-card .stat-value { font-size: 24px; font-weight: 800; line-height: 1; }
+    .stat-card .stat-label { font-size: 11.5px; color: var(--text-muted); margin-top: 8px; font-weight: 500; }
+
+    /* CATEGORY PILLS */
+    .category-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .pill {
+      background: #0c2342; border: 1px solid #1c3e6b; color: #b1c7e6;
+      padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .pill:hover { border-color: #3b74b8; color: #ffffff; }
+    .pill.active { background: #185ab4; border-color: #3b82f6; color: #ffffff; font-weight: 600; }
+
+    /* SECTION HEADER */
+    .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .section-header h2 { font-size: 18px; font-weight: 700; }
+    .section-header span { font-size: 13px; color: var(--text-muted); }
+
+    /* GRID BUKU */
+    .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+    .book-card {
+      background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px;
+      overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s;
+    }
+    .book-card:hover { transform: translateY(-2px); border-color: #2b558c; }
+    .book-banner {
+      background-color: var(--card-banner); padding: 16px 18px; min-height: 95px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .badge-category {
+      align-self: flex-end; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(4px);
+      color: #ffffff; font-size: 10px; font-weight: 700; padding: 3px 9px;
+      border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .book-banner h3 { font-size: 15.5px; font-weight: 700; color: #ffffff; margin-top: 6px; line-height: 1.35; }
+    .book-body { padding: 16px 18px; display: flex; flex-direction: column; flex: 1; }
+    .book-subtitle { font-size: 13px; font-weight: 700; color: #ffffff; margin-bottom: 3px; }
+    .book-author { font-size: 12px; color: #9ab4d6; }
+    .book-year { font-size: 11px; color: #718cad; margin-top: 2px; }
+    .book-desc { font-size: 12px; color: #cbd5e1; margin-top: 10px; line-height: 1.45; flex: 1; }
+    .book-stats { font-size: 11px; color: #7995bc; margin-top: 12px; display: flex; gap: 12px; }
+    .book-actions {
+      display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px;
+      margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .btn-card-read {
+      background: var(--btn-blue); color: #fff; font-size: 11.5px; padding: 8px 6px;
+      border-radius: 6px; text-align: center; font-weight: 600; border: none; cursor: pointer;
+    }
+    .btn-card-read:hover { background: var(--btn-blue-hover); }
+    .btn-card-download {
+      background: var(--btn-green); color: #fff; font-size: 11.5px; padding: 8px 6px;
+      border-radius: 6px; text-align: center; text-decoration: none; font-weight: 600; border: none; cursor: pointer;
+    }
+    .btn-card-download:hover { background: var(--btn-green-hover); }
+    .btn-card-delete {
+      background: #142a47; color: #e28a8a; border: 1px solid #301f28; font-size: 11.5px;
+      padding: 7px 12px; border-radius: 6px; font-weight: 600; cursor: pointer;
+    }
+    .btn-card-delete:hover { background: #c53030; color: #fff; }
+
+    /* MODAL */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.78); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center; z-index: 999;
+      opacity: 0; visibility: hidden; transition: all 0.2s ease; padding: 16px;
+    }
+    .modal-backdrop.show { opacity: 1; visibility: visible; }
+    .modal {
+      background: #0b1f3a; border: 1px solid #234773; border-radius: 12px;
+      width: 100%; max-width: 540px; padding: 24px; box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+    }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .modal-header h3 { font-size: 18px; font-weight: 700; }
+    .modal-close { background: transparent; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; }
+    .modal-close:hover { color: #fff; }
+    .form-group { margin-bottom: 13px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: #b2c9e6; margin-bottom: 5px; }
+    .form-control {
+      width: 100%; background: #061324; border: 1px solid #1c3d69; color: #ffffff;
+      padding: 9px 12px; border-radius: 6px; font-size: 13px; outline: none;
+    }
+    .form-control:focus { border-color: #2b6cb0; box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.4); }
+    .modal-footer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+
+    .cat-list { list-style: none; max-height: 240px; overflow-y: auto; margin: 14px 0; border: 1px solid #19365c; border-radius: 8px; }
+    .cat-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-bottom: 1px solid #142c4b; font-size: 13px; }
+    .cat-item:last-child { border-bottom: none; }
+    .btn-del-cat { background: transparent; color: #e28a8a; border: 1px solid #4a2128; border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer; }
+    .btn-del-cat:hover { background: #c53030; color: #fff; }
+
+    .modal-wide { max-width: 820px; max-height: 90vh; overflow-y: auto; }
+    .log-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 12px; }
+    .log-table th, .log-table td { padding: 9px 12px; text-align: left; border-bottom: 1px solid #19365c; }
+    .log-table th { background: #081a33; color: #9cb4d4; font-weight: 600; }
+    .log-table tr:hover td { background: #0e274a; }
+    .bar-container { background: #07172c; border-radius: 4px; height: 8px; overflow: hidden; margin-top: 6px; }
+    .bar-fill { background: #3b82f6; height: 100%; border-radius: 4px; }
+    .viewer-modal { width: 92vw; max-width: 1000px; height: 86vh; display: flex; flex-direction: column; }
+    .viewer-iframe { width: 100%; flex: 1; border: none; border-radius: 8px; background: #fff; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-container" onclick="triggerLogoUpload()" title="Klik untuk mengganti logo">
+          <img src="data:image/png;base64,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" id="logoImg" class="logo-img" alt="Logo Otoranpur" onerror="showLogoFallback()">
+          <div id="logoFallback" class="logo-fallback" style="display: none;">
+            <svg width="34" height="34" viewBox="0 0 100 100">
+              <path d="M50 5 L55 20 L70 12 L68 28 L85 28 L77 42 L92 49 L80 60 L92 71 L77 78 L85 92 L68 92 L70 108 L55 100 L50 115" fill="none" stroke="#d92d20" stroke-width="8"></path>
+              <text x="50" y="55" font-size="20" font-weight="900" text-anchor="middle" fill="#000">OTO</text>
+            </svg>
+          </div>
+        </div>
+        <input type="file" id="logoFileInput" accept="image/*" style="display: none;" onchange="handleLogoUpload(event)">
+        <div class="header-text">
+          <h1>Perpustakaan Prodi Teknik Otomotif Ranpur</h1>
+          <p>Perpustakaan Digital • Koleksi Bahan Ajar &amp; Modul • Akses Google Drive</p>
+        </div>
+      </div>
+
+      <div class="live-monitor-bar">
+        <div class="pulse-dot"></div>
+        <span>Monitoring: <strong id="quickVisitors">3</strong> Kunjungan Hari Ini | <strong id="quickReads">968</strong> Dibaca</span>
+      </div>
+    </header>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="Cari judul modul, penulis, atau rumpun keilmuan...">
+      </div>
+      <button class="btn btn-amber" onclick="openAddModal()">+ Tambah Koleksi</button>
+      <button class="btn btn-purple" onclick="openCategoryModal()">⚙️ Kelola Rumpun</button>
+      <button class="btn btn-navy" onclick="triggerImportCSV()">⇪ Import CSV</button>
+      <button class="btn btn-navy" onclick="exportCSV()">⇩ Export CSV</button>
+      <button class="btn btn-monitor" onclick="openMonitorModal()">📊 Monitoring</button>
+      <button class="btn btn-outline" onclick="resetDefaultData()">Reset Data</button>
+      <input type="file" id="csvFileInput" accept=".csv" style="display: none" onchange="handleCSVFile(event)">
+    </div>
+
+    <!-- METRICS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="statTotal">77</div>
+        <div class="stat-label">Total koleksi modul</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="statKategori">10</div>
+        <div class="stat-label">Rumpun keilmuan</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="statPdf">77</div>
+        <div class="stat-label">Tersedia File/Link PDF</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="statReads">968</div>
+        <div class="stat-label">Total Akses Pembaca</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="statDownloads">537</div>
+        <div class="stat-label">Total Modul Diunduh</div>
+      </div>
+    </div>
+
+    <!-- RUMPUN KEILMUAN PILLS -->
+    <div class="category-pills" id="categoryPills">
+        <button class="pill " onclick="selectCategory('Semua')">
+          Semua
+        </button>
+      
+        <button class="pill " onclick="selectCategory('MKDU')">
+          MKDU
+        </button>
+      
+        <button class="pill " onclick="selectCategory('Konversi Energi')">
+          Konversi Energi
+        </button>
+      
+        <button class="pill " onclick="selectCategory('Material')">
+          Material
+        </button>
+      
+        <button class="pill " onclick="selectCategory('Konstruksi')">
+          Konstruksi
+        </button>
+      
+        <button class="pill " onclick="selectCategory('Manufaktur')">
+          Manufaktur
+        </button>
+      
+        <button class="pill active" onclick="selectCategory('Komputasi')">
+          Komputasi
+        </button>
+      
+        <button class="pill " onclick="selectCategory('Mekatronik')">
+          Mekatronik
+        </button>
+      
+        <button class="pill " onclick="selectCategory('Agama')">
+          Agama
+        </button>
+      
+        <button class="pill " onclick="selectCategory('Lainnya')">
+          Lainnya
+        </button>
+      
+        <button class="pill " onclick="selectCategory('Otomotif')">
+          Otomotif
+        </button>
+      </div>
+
+    <!-- SECTION TITLE -->
+    <div class="section-header">
+      <h2>Koleksi E-Book &amp; Modul</h2>
+      <span id="collectionCount">5 koleksi ditampilkan</span>
+    </div>
+
+    <!-- GRID BUKU -->
+    <div class="books-grid" id="booksGrid">
+          <div class="book-card">
+            <div class="book-banner">
+              <span class="badge-category">Komputasi</span>
+              <h3>Logic of Analog and Digital Machines</h3>
+            </div>
+            <div class="book-body">
+              <div class="book-subtitle">Logic of Analog and Digital Machines</div>
+              <div class="book-author">Paolo Rocchi</div>
+              <div class="book-year">Tahun: 2010</div>
+              <p class="book-desc">Konsep dan logika di balik mesin analog dan digital, sifat alami serta teori informasi, dan perbedaan prinsip pemrosesan data dalam sistem komputas</p>
+              <div class="book-stats">
+                <span>👁 0 dibaca</span>
+                <span>⬇ 0 diunduh</span>
+              </div>
+              <div class="book-actions">
+                
+                  <button class="btn-card-read" onclick="trackRead('1791529663769', 'https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1kdZH0hCfR2sDxcnMptPpvrI77wpL4xiq%2Fpreview', 'Logic of Analog and Digital Machines')">📖 Baca Online</button>
+                  <a href="https://drive.google.com/uc?export=download&amp;id=1kdZH0hCfR2sDxcnMptPpvrI77wpL4xiq" target="_blank" download="" class="btn-card-download" onclick="trackDownload('1791529663769')">⬇ Download</a>
+                
+                <button class="btn-card-delete" onclick="deleteBook('1791529663769')">Hapus</button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="book-card">
+            <div class="book-banner">
+              <span class="badge-category">Komputasi</span>
+              <h3>Hanjar Autonomous Vehicle Gabung</h3>
+            </div>
+            <div class="book-body">
+              <div class="book-subtitle">Hanjar Autonomous Vehicle Gabung</div>
+              <div class="book-author">Poltekad Kodiklatad</div>
+              <div class="book-year">Tahun: 2025</div>
+              <p class="book-desc">Teori navigasi kendaraan otonom, kecerdasan buatan, dan kontrol lokalisasi.</p>
+              <div class="book-stats">
+                <span>👁 24 dibaca</span>
+                <span>⬇ 16 diunduh</span>
+              </div>
+              <div class="book-actions">
+                
+                  <button class="btn-card-read" onclick="trackRead('d33', 'https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F13GKFDKExW1ez0g02s_c6zG3I_Ch2xYmb%2Fpreview', 'Hanjar Autonomous Vehicle Gabung')">📖 Baca Online</button>
+                  <a href="https://drive.google.com/uc?export=download&amp;id=13GKFDKExW1ez0g02s_c6zG3I_Ch2xYmb" target="_blank" download="" class="btn-card-download" onclick="trackDownload('d33')">⬇ Download</a>
+                
+                <button class="btn-card-delete" onclick="deleteBook('d33')">Hapus</button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="book-card">
+            <div class="book-banner">
+              <span class="badge-category">Komputasi</span>
+              <h3>Hanjar Praktik Autonomous Vehicle</h3>
+            </div>
+            <div class="book-body">
+              <div class="book-subtitle">Hanjar Praktik Autonomous Vehicle</div>
+              <div class="book-author">Poltekad Kodiklatad</div>
+              <div class="book-year">Tahun: 2025</div>
+              <p class="book-desc">Pemrograman robot UGV, kontrol sensor ultrasonik, dan aplikasi kendali.</p>
+              <div class="book-stats">
+                <span>👁 20 dibaca</span>
+                <span>⬇ 13 diunduh</span>
+              </div>
+              <div class="book-actions">
+                
+                  <button class="btn-card-read" onclick="trackRead('d34', 'https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1VDyOXZbHsErAq4brMCR-YaP8IonFiF9b%2Fpreview', 'Hanjar Praktik Autonomous Vehicle')">📖 Baca Online</button>
+                  <a href="https://drive.google.com/uc?export=download&amp;id=1VDyOXZbHsErAq4brMCR-YaP8IonFiF9b" target="_blank" download="" class="btn-card-download" onclick="trackDownload('d34')">⬇ Download</a>
+                
+                <button class="btn-card-delete" onclick="deleteBook('d34')">Hapus</button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="book-card">
+            <div class="book-banner">
+              <span class="badge-category">Komputasi</span>
+              <h3>Hanjar Praktik FPGA</h3>
+            </div>
+            <div class="book-body">
+              <div class="book-subtitle">Hanjar Praktik FPGA</div>
+              <div class="book-author">Poltekad Kodiklatad</div>
+              <div class="book-year">Tahun: 2025</div>
+              <p class="book-desc">Pemrograman logika perangkat keras FPGA (VHDL/Verilog) otomasi militer.</p>
+              <div class="book-stats">
+                <span>👁 11 dibaca</span>
+                <span>⬇ 5 diunduh</span>
+              </div>
+              <div class="book-actions">
+                
+                  <button class="btn-card-read" onclick="trackRead('d35', 'https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1fd5a8BhEjnm9ol6RPej3fwQYwyLUlkUZ%2Fpreview', 'Hanjar Praktik FPGA')">📖 Baca Online</button>
+                  <a href="https://drive.google.com/uc?export=download&amp;id=1fd5a8BhEjnm9ol6RPej3fwQYwyLUlkUZ" target="_blank" download="" class="btn-card-download" onclick="trackDownload('d35')">⬇ Download</a>
+                
+                <button class="btn-card-delete" onclick="deleteBook('d35')">Hapus</button>
+              </div>
+            </div>
+          </div>
+        
+          <div class="book-card">
+            <div class="book-banner">
+              <span class="badge-category">Komputasi</span>
+              <h3>Modul Praktikum Sistem FPGA Berbasis Mikrokontroler</h3>
+            </div>
+            <div class="book-body">
+              <div class="book-subtitle">Modul Praktikum Sistem FPGA Berbasis Mikrokontroler</div>
+              <div class="book-author">Poltekad Kodiklatad</div>
+              <div class="book-year">Tahun: 2026</div>
+              <p class="book-desc">Simulasi mikrokontroler ESP32, protokol MQTT, dan komunikasi data nirkabel.</p>
+              <div class="book-stats">
+                <span>👁 15 dibaca</span>
+                <span>⬇ 8 diunduh</span>
+              </div>
+              <div class="book-actions">
+                
+                  <button class="btn-card-read" onclick="trackRead('d36', 'https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1nPH_NPXO8ont8hwClSLbLmnuZTHNjDtJ%2Fpreview', 'Modul Praktikum Sistem FPGA Berbasis Mikrokontroler')">📖 Baca Online</button>
+                  <a href="https://drive.google.com/uc?export=download&amp;id=1nPH_NPXO8ont8hwClSLbLmnuZTHNjDtJ" target="_blank" download="" class="btn-card-download" onclick="trackDownload('d36')">⬇ Download</a>
+                
+                <button class="btn-card-delete" onclick="deleteBook('d36')">Hapus</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <!-- MODAL KELOLA RUMPUN KEILMUAN -->
+  <div class="modal-backdrop" id="categoryModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>⚙️ Kelola Rumpun Keilmuan</h3>
+        <button class="modal-close" onclick="closeCategoryModal()">×</button>
+      </div>
+      <div>
+        <label style="font-size: 12px; font-weight: 600; color: #b2c9e6; margin-bottom: 5px; display: block;">Tambah Rumpun Baru</label>
+        <div style="display: flex; gap: 8px;">
+          <input type="text" id="newCategoryInput" class="form-control" placeholder="Nama rumpun baru">
+          <button class="btn btn-amber" style="white-space: nowrap;" onclick="addNewCategory()">+ Tambah</button>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: #95abcb; margin-top: 16px; font-weight: 600;">Daftar Rumpun Terdaftar:</p>
+      <ul class="cat-list" id="categoryManageList">
+        <li class="cat-item">
+          <span>MKDU</span>
+          <button class="btn-del-cat" onclick="deleteCategory('MKDU')">Hapus</button>
+        </li>
+      
+        <li class="cat-item">
+          <span>Konversi Energi</span>
+          <button class="btn-del-cat" onclick="deleteCategory('Konversi Energi')">Hapus</button>
+        </li>
+      
+        <li class="cat-item">
+          <span>Material</span>
+          <button class="btn-del-cat" onclick="deleteCategory('Material')">Hapus</button>
+        </li>
+      
+        <li class="cat-item">
+          <span>Konstruksi</span>
+          <button class="btn-del-cat" onclick="deleteCategory('Konstruksi')">Hapus</button>
+        </li>
+      
+        <li class="cat-item">
+          <span>Manufaktur</span>
+          <button class="btn-del-cat" onclick="deleteCategory('Manufaktur')">Hapus</button>
+        </li>
+      
+        <li class="cat-item">
+          <span>Komputasi</span>
+          <button class="btn-del-cat" onclick="deleteCategory('Komputasi')">Hapus</button>
+        </li>
+      
+        <li class="cat-item">
+          <span>Mekatronik</span>
+          <button class="btn-del-cat" onclick="deleteCategory('Mekatronik')">Hapus</button>
+        </li>
+      
+        <li class="cat-item">
+          <span>Agama</span>
+          <button class="btn-del-cat" onclick="deleteCategory('Agama')">Hapus</button>
+        </li>
+      
+        <li class="cat-item">
+          <span>Lainnya</span>
+          <button class="btn-del-cat" onclick="deleteCategory('Lainnya')">Hapus</button>
+        </li>
+      
+        <li class="cat-item">
+          <span>Otomotif</span>
+          <button class="btn-del-cat" onclick="deleteCategory('Otomotif')">Hapus</button>
+        </li>
+      </ul>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" onclick="closeCategoryModal()">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TAMBAH MODUL -->
+  <div class="modal-backdrop" id="bookModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Tambah Koleksi Modul</h3>
+        <button class="modal-close" onclick="closeBookModal()">×</button>
+      </div>
+      <form id="bookForm" onsubmit="saveBook(event)">
+        <input type="hidden" id="bookId" value="">
+        <div class="form-group">
+          <label>Judul Bahan Ajar / Modul *</label>
+          <input type="text" id="bookTitle" class="form-control" placeholder="Contoh: Modul Teknologi Armor Ranpur" required="">
+        </div>
+        <div class="form-group">
+          <label>Rumpun Keilmuan *</label>
+          <select id="bookCategory" class="form-control" required="">
+        <option value="MKDU">MKDU</option>
+      
+        <option value="Konversi Energi">Konversi Energi</option>
+      
+        <option value="Material">Material</option>
+      
+        <option value="Konstruksi">Konstruksi</option>
+      
+        <option value="Manufaktur">Manufaktur</option>
+      
+        <option value="Komputasi">Komputasi</option>
+      
+        <option value="Mekatronik">Mekatronik</option>
+      
+        <option value="Agama">Agama</option>
+      
+        <option value="Lainnya">Lainnya</option>
+      
+        <option value="Otomotif">Otomotif</option>
+      </select>
+        </div>
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+          <div class="form-group">
+            <label>Penulis / Tim Pengampu *</label>
+            <input type="text" id="bookAuthor" class="form-control" placeholder="Poltekad Kodiklatad" required="">
+          </div>
+          <div class="form-group">
+            <label>Tahun *</label>
+            <input type="number" id="bookYear" class="form-control" value="2026" required="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Link Google Drive / PDF</label>
+          <input type="text" id="bookPdf" class="form-control" placeholder="Paste link Share Google Drive di sini...">
+        </div>
+        <div class="form-group">
+          <label>Deskripsi Ringkas Materi</label>
+          <textarea id="bookDesc" class="form-control" rows="3" placeholder="Kompetensi dan ringkasan materi bahan ajar..."></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeBookModal()">Batal</button>
+          <button type="submit" class="btn btn-amber">Simpan Koleksi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL MONITORING & ANALITIK -->
+  <div class="modal-backdrop" id="monitorModal">
+    <div class="modal modal-wide">
+      <div class="modal-header">
+        <h3>📊 Monitoring Aktivitas &amp; Pengunjung Perpustakaan</h3>
+        <button class="modal-close" onclick="closeMonitorModal()">×</button>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 18px;">
+        <div class="stat-card" style="padding: 12px;"><div class="stat-value" id="mTotalVisits">84</div><div class="stat-label">Total Kunjungan</div></div>
+        <div class="stat-card" style="padding: 12px;"><div class="stat-value" id="mTodayVisits">3</div><div class="stat-label">Pengunjung Hari Ini</div></div>
+        <div class="stat-card" style="padding: 12px;"><div class="stat-value" id="mTotalReads">968</div><div class="stat-label">Total Baca Online</div></div>
+        <div class="stat-card" style="padding: 12px;"><div class="stat-value" id="mTotalDownloads">537</div><div class="stat-label">Total Modul Diunduh</div></div>
+      </div>
+      <h4 style="font-size: 14px; margin-bottom: 8px;">Top Modul Paling Populer</h4>
+      <div id="topBooksContainer" style="margin-bottom: 20px;">
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span><strong>Modul Praktikum ECU (Engine Control Unit)</strong> (Mekatronik)</span>
+              <span style="color: #9cb4d4;">28 Baca • 19 Unduh</span>
+            </div>
+            <div class="bar-container"><div class="bar-fill" style="width: 100%;"></div></div>
+          </div>
+        
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span><strong>Modul Praktikum Harwat 2026</strong> (Lainnya)</span>
+              <span style="color: #9cb4d4;">27 Baca • 19 Unduh</span>
+            </div>
+            <div class="bar-container"><div class="bar-fill" style="width: 98%;"></div></div>
+          </div>
+        
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span><strong>Hanjar Teknik Pemrograman ECU Gabung</strong> (Mekatronik)</span>
+              <span style="color: #9cb4d4;">26 Baca • 18 Unduh</span>
+            </div>
+            <div class="bar-container"><div class="bar-fill" style="width: 94%;"></div></div>
+          </div>
+        
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span><strong>Cengel Fluid Mechanics 6th Edition</strong> (Konversi Energi)</span>
+              <span style="color: #9cb4d4;">25 Baca • 17 Unduh</span>
+            </div>
+            <div class="bar-container"><div class="bar-fill" style="width: 89%;"></div></div>
+          </div>
+        
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span><strong>Hanjar Autonomous Vehicle Gabung</strong> (Komputasi)</span>
+              <span style="color: #9cb4d4;">24 Baca • 16 Unduh</span>
+            </div>
+            <div class="bar-container"><div class="bar-fill" style="width: 85%;"></div></div>
+          </div>
+        </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px;">
+        <h4 style="font-size: 14px;">Log Interaksi Pengunjung</h4>
+        <button class="btn btn-navy" style="font-size: 11px; padding: 5px 10px;" onclick="exportLogCSV()">Ekspor Log ke CSV</button>
+      </div>
+      <table class="log-table">
+        <thead><tr><th>Waktu</th><th>Aksi</th><th>Judul Modul / Detail</th><th>Rumpun</th></tr></thead>
+        <tbody id="logTableBody">
+        <tr>
+          <td>14:07 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Logic of Analog and Digital Machines</td>
+          <td>Komputasi</td>
+        </tr>
+      
+        <tr>
+          <td>14:03 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Basic Fluid Mechanics and Hydraulic Machines</td>
+          <td>Konversi Energi</td>
+        </tr>
+      
+        <tr>
+          <td>13:43 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Baca Online</span></td>
+          <td>Casting: An Analytical Approach (Teknik Pengecoran)</td>
+          <td>Material</td>
+        </tr>
+      
+        <tr>
+          <td>13:42 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Casting: An Analytical Approach (Teknik Pengecoran)</td>
+          <td>Material</td>
+        </tr>
+      
+        <tr>
+          <td>13:39 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Structure from Diffraction Methods (Inorganic Materials Series)</td>
+          <td>Material</td>
+        </tr>
+      
+        <tr>
+          <td>13:35 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Kunjungan Web</span></td>
+          <td>Membuka Beranda Perpustakaan</td>
+          <td>-</td>
+        </tr>
+      
+        <tr>
+          <td>13:35 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Kunjungan Web</span></td>
+          <td>Membuka Beranda Perpustakaan</td>
+          <td>-</td>
+        </tr>
+      
+        <tr>
+          <td>13:31 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Biological Interactions with Surface Charge in Biomaterials</td>
+          <td>Material</td>
+        </tr>
+      
+        <tr>
+          <td>13:28 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Internal Combustion Engine</td>
+          <td>Otomotif</td>
+        </tr>
+      
+        <tr>
+          <td>13:21 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Gasoline Engine Management System</td>
+          <td>Otomotif</td>
+        </tr>
+      
+        <tr>
+          <td>13:20 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Diesel Engine Reference Book</td>
+          <td>Otomotif</td>
+        </tr>
+      
+        <tr>
+          <td>13:17 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Diesel Engine Management System (Bosch)</td>
+          <td>Otomotif</td>
+        </tr>
+      
+        <tr>
+          <td>13:15 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Rumpun</span></td>
+          <td>Otomotif</td>
+          <td>Otomotif</td>
+        </tr>
+      
+        <tr>
+          <td>13:11 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Auto CAD 3D Problem Solving</td>
+          <td>Konstruksi</td>
+        </tr>
+      
+        <tr>
+          <td>13:10 - 9/10</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">Tambah Modul</span></td>
+          <td>Auto CAD Fundamental 2D 2016</td>
+          <td>Konstruksi</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- MODAL PDF VIEWER -->
+  <div class="modal-backdrop" id="viewerModal">
+    <div class="modal viewer-modal">
+      <div class="modal-header">
+        <h3 id="viewerTitle">Membaca: Casting: An Analytical Approach (Teknik Pengecoran)</h3>
+        <button class="modal-close" onclick="closeViewerModal()">×</button>
+      </div>
+      <iframe id="viewerIframe" class="viewer-iframe" src="./Perpustakaan Digital Prodi Teknik Otomotif Ranpur jumat sore_files/saved_resource.html"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const INITIAL_CATEGORIES = [
+      "MKDU", "Konversi Energi", "Material", "Konstruksi",
+      "Manufaktur", "Komputasi", "Mekatronik", "Agama", "Lainnya"
+    ];
+
+    // SELURUH KOLEKSI BUKU DARI GOOGLE DRIVE ANDA
+    const DRIVE_BOOKS = [
+      // MKDU
+      {
+        id: "d1", title: "Hanjar Pancasila Gabung", category: "MKDU",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Naskah departemen pendidikan Pancasila D4 Teknik Otomotif Ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/1yyRfQtZy4cDBWy9SuiG6Y3x7UWFzwLmv/view", readCount: 12, downloadCount: 4
+      },
+      {
+        id: "d2", title: "Hanjar Bahasa Indonesia Gabung", category: "MKDU",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Tata bahasa baku dan penulisan karya ilmiah kedinasan militer.",
+        pdfUrl: "https://drive.google.com/file/d/1RpSG6z5Y-_I0J_1ISAFlG9Mq2hnhnEJJ/view", readCount: 8, downloadCount: 3
+      },
+      {
+        id: "d3", title: "Modul Praktik Bahasa Inggris Otoranpur", category: "MKDU",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Praktikum bahasa Inggris teknik otomotif kendaraan tempur militer.",
+        pdfUrl: "https://drive.google.com/file/d/1i7Bf5nTQeTx6czg1N1h8mqLk8E9GQh2W/view", readCount: 15, downloadCount: 7
+      },
+      {
+        id: "d4", title: "Hanjar Bahasa Inggris Teknik Gabung", category: "MKDU",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Bahan ajar komprehensif bahasa Inggris teknik otomotif ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/1aD8_uVF2oL8GwhQGU_0PvmDu-skaa3Xt/view", readCount: 6, downloadCount: 2
+      },
+      {
+        id: "d5", title: "Hanjar Matematika Rekayasa Gabung", category: "MKDU",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Kalkulus diferensial, integral, dan aljabar matriks untuk rekayasa otomotif.",
+        pdfUrl: "https://drive.google.com/file/d/1Wwx3sAPwXrZ0NGHMCOeARU1oq0bTgwg-/view", readCount: 10, downloadCount: 5
+      },
+      {
+        id: "d6", title: "Modul PKL 1 Prodi Otoranpur", category: "MKDU",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Buku pedoman dan lembar kerja pelaksanaan Praktik Kerja Lapangan 1.",
+        pdfUrl: "https://drive.google.com/file/d/163xs2YLsGCzQBidrmZkP6hq9vFG96HVq/view", readCount: 9, downloadCount: 4
+      },
+      {
+        id: "d7", title: "Modul PKL 2 OTO (Kepelatihan dan Kepemimpinan)", category: "MKDU",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Panduan pembinaan kepemimpinan lapangan dan instruktur teknis ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/1KmeaBQBL4gmkj7cgMO6riGQo0m_343a2/view", readCount: 14, downloadCount: 6
+      },
+
+      // KONVERSI ENERGI
+      {
+        id: "d8", title: "Hanjar Mesin Konversi Energi Gabung", category: "Konversi Energi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Naskah teori siklus termal, motor bakar, dan sistem energi ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/1WGagaQ3sZdlU8Amdvy1eQ94UBp5LpvSE/view", readCount: 18, downloadCount: 11
+      },
+      {
+        id: "d9", title: "Hanjar Praktik Mesin Konversi Energi Gabung", category: "Konversi Energi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Praktik pengujian performa motor bakar dan sistem tenaga kendaraan.",
+        pdfUrl: "https://drive.google.com/file/d/1g7neMHoojlgNZ_JiJpUgL5s6J3i98EmP/view", readCount: 14, downloadCount: 8
+      },
+      {
+        id: "d10", title: "Modul Praktikum Mesin Konversi Energi", category: "Konversi Energi",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Pengujian motor bakar diesel multi-fuel dan instalasi daya ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/1tSf-3vHYvVYk5d4XRefhuE2GjjIuLPJO/view", readCount: 22, downloadCount: 15
+      },
+      {
+        id: "d11", title: "Hanjar Termodinamika Teknik Gabung", category: "Konversi Energi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Hukum termodinamika 1 & 2, analisis gas ideal, dan siklus diesel/otto.",
+        pdfUrl: "https://drive.google.com/file/d/1kmtDYq_cWQQj_L-Q8hbUQH-ukvxkmTqq/view", readCount: 11, downloadCount: 5
+      },
+      {
+        id: "d12", title: "Hanjar Perpindahan Panas Gabung", category: "Konversi Energi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Konduksi, konveksi, radiasi sistem pendingin mesin lapis baja ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/14iDcXkoQiaOwDUTYVqW9j3D3n2vT26Wc/view", readCount: 13, downloadCount: 6
+      },
+      {
+        id: "d13", title: "Hanjar Mekanika Fluida Gabung", category: "Konversi Energi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Statika dan dinamika fluida, rugi-rugi aliran pipa, dan tekanan hidrolik.",
+        pdfUrl: "https://drive.google.com/file/d/1WikSuUK1wRDnOPt9y4u_2QxeIVmd2ALC/view", readCount: 9, downloadCount: 4
+      },
+      {
+        id: "d14", title: "Cengel Fluid Mechanics 6th Edition", category: "Konversi Energi",
+        author: "Yunus A. Cengel", year: "2026",
+        desc: "Referensi standar internasional mekanika fluida komprehensif.",
+        pdfUrl: "https://drive.google.com/file/d/1pocv7aKLizEnTrkwu784-Fo2EtAqsARm/view", readCount: 25, downloadCount: 17
+      },
+      {
+        id: "d15", title: "Basic Fluid Mechanics and Hydraulic Machines", category: "Konversi Energi",
+        author: "Zoeb Husain, dkk.", year: "2026",
+        desc: "Prinsip mekanika fluida dan mesin turbin hidrolik pembangkit tenaga.",
+        pdfUrl: "https://drive.google.com/file/d/120x38vrps4XfME5xGuRJhAryByZv-3A2/view", readCount: 16, downloadCount: 9
+      },
+
+      // MATERIAL
+      {
+        id: "d16", title: "Hanjar Praktik Analisis Struktur Material Gabung", category: "Material",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Pengujian struktur mikro, metalografi, dan sifat mekanik material ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/1Gnb5cg6ehxDiyVioAVTB5Oys-2V3XNHy/view", readCount: 20, downloadCount: 12
+      },
+      {
+        id: "d17", title: "Modul Analisa Struktur Material", category: "Material",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Uji keras Rockwell/Vickers, mikroskopi optik, dan perlakuan panas baja.",
+        pdfUrl: "https://drive.google.com/file/d/1nginvQiLdGOZ6Ua18YC-bvr5EcRD3xX1/view", readCount: 17, downloadCount: 9
+      },
+      {
+        id: "d18", title: "Structure from Diffraction Methods (Inorganic Series)", category: "Material",
+        author: "Duncan W. Bruce, dkk.", year: "2026",
+        desc: "Referensi difraksi sinar-X untuk analisis kristalografi logam & keramik paduan.",
+        pdfUrl: "https://drive.google.com/file/d/10Zn-H9c_jDFLqmAyL14R1bchaO6RJJem/view", readCount: 7, downloadCount: 3
+      },
+
+      // KONSTRUKSI
+      {
+        id: "d19", title: "Hanjar Konstruksi Kendaraan Gabung", category: "Konstruksi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Analisis tegangan struktur bodi, sasis, dan lambung kendaraan lapis baja.",
+        pdfUrl: "https://drive.google.com/file/d/1IdWdpzZXt0TF0Khr91gqBA8L0SQzGf1J/view", readCount: 21, downloadCount: 14
+      },
+      {
+        id: "d20", title: "Hanjar Praktik Konstruksi Kendaraan Gabung", category: "Konstruksi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Praktikum pengukuran dimensi, perakitan sasis, dan sambungan konstruksi.",
+        pdfUrl: "https://drive.google.com/file/d/1hlrq7CZWPsV6_gvbQDZQWkFce1g6dlt1/view", readCount: 19, downloadCount: 10
+      },
+      {
+        id: "d21", title: "Modul Praktikum Konstruksi Kendaraan 1", category: "Konstruksi",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Pengujian kekuatan rangka monokok dan geometri lambung anti-ranjau.",
+        pdfUrl: "https://drive.google.com/file/d/1oFiFKlJVkJzlDDB1_hPBlXV-tWUguFoV/view", readCount: 15, downloadCount: 8
+      },
+      {
+        id: "d22", title: "Hanjar Praktik Desain Kendaraan Gabung", category: "Konstruksi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Desain CAD bodi ranpur, pembagian beban poros, dan pusat gravitasi.",
+        pdfUrl: "https://drive.google.com/file/d/1h1v-Y-i6Ksn9ycUCMwcdcBnO4HEzqIW-/view", readCount: 16, downloadCount: 9
+      },
+      {
+        id: "d23", title: "Modul Praktikum Desain Kendaraan", category: "Konstruksi",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Metode perancangan tata letak komponen internal ranpur dan ergonomi awak.",
+        pdfUrl: "https://drive.google.com/file/d/1FgiA2gSB8y7O0yaVY6nC1s-K9kBr7BJD/view", readCount: 18, downloadCount: 11
+      },
+      {
+        id: "d24", title: "Hanjar Elemen Mesin Gabung", category: "Konstruksi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Perancangan pasak, poros, roda gigi sproket rantai, bantalan, dan pegas.",
+        pdfUrl: "https://drive.google.com/file/d/1v_OfP3Ot5wMYjSmaypDfEHjLYfzpjERS/view", readCount: 23, downloadCount: 13
+      },
+      {
+        id: "d25", title: "Modul Praktikum Stabilitas Kendaraan", category: "Konstruksi",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Uji kemiringan statis/dinamis, suspensi torsion bar, dan redaman lintas medan.",
+        pdfUrl: "https://drive.google.com/file/d/1fwg5tnC-I_oaqNpJ_8ROKGbObzpTtSlJ/view", readCount: 14, downloadCount: 7
+      },
+
+      // MANUFAKTUR
+      {
+        id: "d26", title: "Hanjar CAD CAM Gabung", category: "Manufaktur",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Teori pemodelan komponen mesin digital dan simulasi pemesinan CNC.",
+        pdfUrl: "https://drive.google.com/file/d/1VsEpkYT1-tp1ycmKpbG7MZ1G0qYR5f3G/view", readCount: 13, downloadCount: 6
+      },
+      {
+        id: "d27", title: "Hanjar Praktik CAD & CAM Gabung", category: "Manufaktur",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Pembuatan lintasan pahat (toolpath) dan ekspor G-code mesin bubut/milling CNC.",
+        pdfUrl: "https://drive.google.com/file/d/1HoYdcYK_xyQc8QtDZCswOxpmR1THQgJz/view", readCount: 17, downloadCount: 10
+      },
+      {
+        id: "d28", title: "Modul Praktikum CAD & CAM", category: "Manufaktur",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Panduan praktikum laboratorium komputer CAD/CAM ranpur 2026.",
+        pdfUrl: "https://drive.google.com/file/d/166ZDP8gDHCG-73MB11Yp-UODwV0uyT2Q/view", readCount: 19, downloadCount: 12
+      },
+      {
+        id: "d29", title: "CADfolks AutoCAD 2016 For Beginners", category: "Manufaktur",
+        author: "CADFolks / Kishore", year: "2026",
+        desc: "Buku panduan mendasar perancangan teknik 2D dan 3D AutoCAD lengkap.",
+        pdfUrl: "https://drive.google.com/file/d/1A7cq6r2f1KQnMBTQZB3O2IQDkdcYfr_a/view", readCount: 22, downloadCount: 14
+      },
+      {
+        id: "d30", title: "Hanjar Praktik Menggambar Teknik Gabung", category: "Manufaktur",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Standarisasi gambar proyeksi ISO, toleransi linier, geometrik, dan etiket.",
+        pdfUrl: "https://drive.google.com/file/d/1GLq_P3CjKSlFxlCv_HDPBRlXn_DkhXY2/view", readCount: 15, downloadCount: 8
+      },
+      {
+        id: "d31", title: "Modul Praktikum Menggambar Teknik", category: "Manufaktur",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Latihan gambar teknik mesin otomotif dan rakitan komponen ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/12JOhsxWOga_8c2LniVVxdA8ZlAbtivht/view", readCount: 16, downloadCount: 9
+      },
+      {
+        id: "d32", title: "Modul Praktikum Proses Manufaktur", category: "Manufaktur",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Proses pengecoran, pengelasan heavy-duty, dan pembentukan plat pelindung.",
+        pdfUrl: "https://drive.google.com/file/d/1S2t4jNJz80lC-EAM8iez1BEwHRXmFFFA/view", readCount: 18, downloadCount: 11
+      },
+
+      // KOMPUTASI
+      {
+        id: "d33", title: "Hanjar Autonomous Vehicle Gabung", category: "Komputasi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Teori navigasi kendaraan otonom, kecerdasan buatan, dan kontrol lokalisasi.",
+        pdfUrl: "https://drive.google.com/file/d/13GKFDKExW1ez0g02s_c6zG3I_Ch2xYmb/view", readCount: 24, downloadCount: 16
+      },
+      {
+        id: "d34", title: "Hanjar Praktik Autonomous Vehicle", category: "Komputasi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Pemrograman robot UGV, kontrol sensor ultrasonik, dan aplikasi kendali.",
+        pdfUrl: "https://drive.google.com/file/d/1VDyOXZbHsErAq4brMCR-YaP8IonFiF9b/view", readCount: 20, downloadCount: 13
+      },
+      {
+        id: "d35", title: "Hanjar Praktik FPGA", category: "Komputasi",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Pemrograman logika perangkat keras FPGA (VHDL/Verilog) otomasi militer.",
+        pdfUrl: "https://drive.google.com/file/d/1fd5a8BhEjnm9ol6RPej3fwQYwyLUlkUZ/view", readCount: 11, downloadCount: 5
+      },
+      {
+        id: "d36", title: "Modul Praktikum Sistem FPGA Berbasis Mikrokontroler", category: "Komputasi",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Simulasi mikrokontroler ESP32, protokol MQTT, dan komunikasi data nirkabel.",
+        pdfUrl: "https://drive.google.com/file/d/1nPH_NPXO8ont8hwClSLbLmnuZTHNjDtJ/view", readCount: 15, downloadCount: 8
+      },
+
+      // MEKATRONIK
+      {
+        id: "d37", title: "Hanjar Teknik Pemrograman ECU Gabung", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Arsitektur ECU mesin, injeksi elektronik militer, dan diagnostik protokol CAN.",
+        pdfUrl: "https://drive.google.com/file/d/13upBeNHXP9qsLpC9aI9KYMLJEkPIXCxa/view", readCount: 26, downloadCount: 18
+      },
+      {
+        id: "d38", title: "Modul Praktikum ECU (Engine Control Unit)", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Praktek kalibrasi timing pengapian, scanning DTC, dan remapping ECU.",
+        pdfUrl: "https://drive.google.com/file/d/1xTQza3X-ZUkNEW85VeAtMtOU2cag_Yah/view", readCount: 28, downloadCount: 19
+      },
+      {
+        id: "d39", title: "Hanjar Sistem Hidrolik dan Pneumatik Gabung", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Sistem daya fluida hidrolik turet senjata dan pengereman pneumatik ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/1TXHyxkGebgaTxCfuaQZe-xF8WZV3wZ6n/view", readCount: 17, downloadCount: 10
+      },
+      {
+        id: "d40", title: "Hanjar Praktik Hidrolik dan Pneumatik Gabung", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Perakitan katup solenoid, silinder hidrolik, dan kalkulasi tekanan sirkuit.",
+        pdfUrl: "https://drive.google.com/file/d/1X2Rl0-HWOqTPYk-Om29ok7sAwt9IDeDe/view", readCount: 15, downloadCount: 8
+      },
+      {
+        id: "d41", title: "Modul Praktikum Hidrolik dan Pneumatik 2026", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Sirkuit daya fluida mekanik ranpur dan troubleshooting kebocoran tekanan.",
+        pdfUrl: "https://drive.google.com/file/d/1VdHwRr1MlhMtRy85TXtp6gUdV4b82xg7/view", readCount: 16, downloadCount: 9
+      },
+      {
+        id: "d42", title: "Hanjar Sistem Listrik Gabung", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Rangkaian arus starter, pengisian baterai 24V, dan kelistrikan instrumen.",
+        pdfUrl: "https://drive.google.com/file/d/1CqsESMRZopikCqnTTkDRiUO4YH2bG0-v/view", readCount: 14, downloadCount: 7
+      },
+      {
+        id: "d43", title: "Hanjar Sistem Kelistrikan Kendaraan Gabung", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Sistem kelistrikan bodi, lampu tempur (blackout), dan alternator militer.",
+        pdfUrl: "https://drive.google.com/file/d/1k3e_zRooMzVj4ZfdCWIRThLvkXQPGA7-/view", readCount: 13, downloadCount: 6
+      },
+      {
+        id: "d44", title: "Hanjar Praktik Sistem Kelistrikan Kendaraan Gabung", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Troubleshooting kelistrikan bodi dan pengukuran jatuh tegangan kabel.",
+        pdfUrl: "https://drive.google.com/file/d/1YqNtGLbFGx4D51ntMqp5DZK591zfK46E/view", readCount: 15, downloadCount: 9
+      },
+      {
+        id: "d45", title: "Modul Praktikum Kelistrikan Kendaraan", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Instalasi modul sensor, aktuator, dan wiring harness standar militer.",
+        pdfUrl: "https://drive.google.com/file/d/1iLEyx6m_OU4flrkpGUbjhppSJ-xSLZn8/view", readCount: 18, downloadCount: 10
+      },
+      {
+        id: "d46", title: "Hanjar Praktik Sistem Listrik Gabung", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Pengujian sistem pengapian, dinamo starter, dan regulator tegangan.",
+        pdfUrl: "https://drive.google.com/file/d/16BIpjP4yShsvlsXlT99gjlJ9Rwwz2oxJ/view", readCount: 12, downloadCount: 5
+      },
+      {
+        id: "d47", title: "Modul Praktikum Mesin-Mesin Listrik", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Motor traksi listrik AC/DC, generator bantu (APU), dan modul konversi arus.",
+        pdfUrl: "https://drive.google.com/file/d/1nUxHCYnOmYqMJAIdLDC_vOm5vLKJDOc6/view", readCount: 14, downloadCount: 8
+      },
+      {
+        id: "d48", title: "Hanjar Praktik Elektronika Daya", category: "Mekatronik",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Inverter traksi, converter DC-DC, dan switching semikonduktor daya tinggi.",
+        pdfUrl: "https://drive.google.com/file/d/1tC54KTkG4IXKVJoCWzIeKxnGxYOvN8j1/view", readCount: 11, downloadCount: 5
+      },
+
+      // LAINNYA
+      {
+        id: "d49", title: "Modul Praktikum Harwat 2026", category: "Lainnya",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "SOP pemeliharaan pencegahan (preventif), berkala, dan overhaul ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/1dzXvA3DkwLvNtHv2JCuo2uiTt09k6CmX/view", readCount: 27, downloadCount: 19
+      },
+      {
+        id: "d50", title: "Hanjar Praktik Performa Kendaraan Gabung", category: "Lainnya",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Pengujian daya pada dinamometer, traksi roda rantai, dan percepatan medan tempur.",
+        pdfUrl: "https://drive.google.com/file/d/1NCU6-lCQK-ONm0_cWNg2rLpBRQPh-9Jd/view", readCount: 22, downloadCount: 14
+      },
+      {
+        id: "d51", title: "Modul Praktikum Performa Kendaraan", category: "Lainnya",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Uji daya jelajah, kemampuan mendaki (gradient test), dan pengereman ranpur.",
+        pdfUrl: "https://drive.google.com/file/d/1k0kB41KvvE_ccZ-UndNO-oXPoz1eEZCy/view", readCount: 19, downloadCount: 11
+      },
+      {
+        id: "d52", title: "Hanjar Praktik Pengukuran Teknik Gabung", category: "Lainnya",
+        author: "Poltekad Kodiklatad", year: "2025",
+        desc: "Pengukuran kebulatan poros, mikrometer, komparator, dan scan tools digital.",
+        pdfUrl: "https://drive.google.com/file/d/1DaTBnPJYMBJCgmZQn8wdfqxGXd8JxiZn/view", readCount: 16, downloadCount: 8
+      },
+      {
+        id: "d53", title: "Modul Praktikum Pengukuran Teknik", category: "Lainnya",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Praktik metrologi industri, densitas fluida, dan pembuatan sensor ukur Arduino.",
+        pdfUrl: "https://drive.google.com/file/d/17dU0ya-Y2QVNhyqgZ8TiGc7Q1M2ZfN9P/view", readCount: 17, downloadCount: 9
+      },
+      {
+        id: "d54", title: "Modul Praktikum Kimia Baterai dan Bahan Bakar", category: "Lainnya",
+        author: "Poltekad Kodiklatad", year: "2026",
+        desc: "Analisis kualitas bahan bakar diesel militer, bilangan setana, dan sel baterai.",
+        pdfUrl: "https://drive.google.com/file/d/1YEAWhc7eNUhli8NhbWBCjGvBCMUJhBu1/view", readCount: 13, downloadCount: 6
+      },
+      {
+        id: "d55", title: "A First Course on Aerodynamics", category: "Lainnya",
+        author: "Arnab Roy", year: "2026",
+        desc: "Dasar aliran gas dan aerodinamika kecepatan rendah dan transonika.",
+        pdfUrl: "https://drive.google.com/file/d/15hRK_hfMc7vwBkrCL9FNUy6hcJuxLpQ_/view", readCount: 14, downloadCount: 7
+      },
+      {
+        id: "d56", title: "Aircraft Engineering Principles (2nd Edition)", category: "Lainnya",
+        author: "Lloyd Dingle & Mike Tooley", year: "2026",
+        desc: "Prinsip rekayasa pesawat terbang, aerodinamika, dan sistem propulsi mekanik.",
+        pdfUrl: "https://drive.google.com/file/d/1-9HQW2CTVK3uNvykgXJkLfGiRFntrjvJ/view", readCount: 12, downloadCount: 5
+      },
+      {
+        id: "d57", title: "Aircraft Maintenance and Repair (7th Edition)", category: "Lainnya",
+        author: "Michael J. Kroes, dkk.", year: "2026",
+        desc: "Pedoman standar pemeliharaan dan inspeksi sistem mekanis penerbangan militer.",
+        pdfUrl: "https://drive.google.com/file/d/1BXbkXFF-tA89jRQFxLXYfZdO15neqhYQ/view", readCount: 15, downloadCount: 8
+      },
+      {
+        id: "d58", title: "Aircraft Propulsion and Gas Turbine Engines", category: "Lainnya",
+        author: "Ahmed F. El-Sayed", year: "2026",
+        desc: "Analisis siklus turbin gas, kompresor aliran aksial, dan ruang bakar daya tinggi.",
+        pdfUrl: "https://drive.google.com/file/d/1FzHLKKiwNZJxctyYmqCe8ZMGExMvfKWJ/view", readCount: 13, downloadCount: 6
+      },
+      {
+        id: "d59", title: "Fundamentals of Aircraft and Rocket Propulsion", category: "Lainnya",
+        author: "Ahmed F. El-Sayed", year: "2026",
+        desc: "Prinsip dinamika termal propulsi roket propelan padat dan propelan cair.",
+        pdfUrl: "https://drive.google.com/file/d/1cop4M5QdfrbabGFeU7brcNZHGpWCrg2h/view", readCount: 11, downloadCount: 4
+      },
+      {
+        id: "d60", title: "Rockets (Frontiers in Space)", category: "Lainnya",
+        author: "Joseph A. Angelo, Jr.", year: "2026",
+        desc: "Sejarah dan fisika peluncuran roket balistik serta teknologi propulsi antariksa.",
+        pdfUrl: "https://drive.google.com/file/d/1Yz3F3jND6iOsqdR3MK5pXxbEG06MhpOQ/view", readCount: 10, downloadCount: 5
+      },
+      {
+        id: "d61", title: "Flight Manual USAF Series B/RB-58A Aircraft", category: "Lainnya",
+        author: "United States Air Force", year: "2026",
+        desc: "Buku manual operasional penerbangan dan sistem kontrol pesawat taktis.",
+        pdfUrl: "https://drive.google.com/file/d/1QDSeKSFfAmwtsTHZx2rOaSSKsZYh_b0B/view", readCount: 9, downloadCount: 3
+      },
+      {
+        id: "d62", title: "Standards of the Expansion Joint Manufacturers", category: "Lainnya",
+        author: "EJMA Standards", year: "2026",
+        desc: "Standarisasi rekayasa sambungan fleksibel bellows pipa temperatur & tekanan tinggi.",
+        pdfUrl: "https://drive.google.com/file/d/15yyEo_56fWfmjtoQh3G63oOHxHFO7yqF/view", readCount: 8, downloadCount: 2
+      }
+    ];
+
+    let categories = [];
+    let books = [];
+    let currentCategory = "Semua";
+    let searchQuery = "";
+    let analytics = { totalVisits: 64, todayVisits: 14, lastVisitDate: new Date().toISOString().slice(0, 10), logs: [] };
+
+    function init() {
+      // Muat Kategori
+      const storedCats = localStorage.getItem("tor_lib_categories_v2");
+      if (storedCats) {
+        try { categories = JSON.parse(storedCats); } catch(e) { categories = [...INITIAL_CATEGORIES]; }
+      } else {
+        categories = [...INITIAL_CATEGORIES];
+        saveCategories();
+      }
+
+      // Muat Logo
+      const savedLogo = localStorage.getItem("tor_lib_logo_custom");
+      if (savedLogo) document.getElementById("logoImg").src = savedLogo;
+
+      // Muat Buku
+      const storedBooks = localStorage.getItem("tor_lib_books_v4");
+      if (storedBooks) {
+        try { books = JSON.parse(storedBooks); } catch(e) { books = [...DRIVE_BOOKS]; }
+      } else {
+        books = [...DRIVE_BOOKS];
+        saveBooks();
+      }
+
+      // Muat Analitik
+      const storedAnalytics = localStorage.getItem("tor_lib_analytics_v2");
+      if (storedAnalytics) {
+        try { analytics = JSON.parse(storedAnalytics); } catch(e) {}
+      }
+
+      recordPageVisit();
+      refreshCategoriesUI();
+      renderApp();
+
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        renderApp();
+      });
+    }
+
+    function saveCategories() { localStorage.setItem("tor_lib_categories_v2", JSON.stringify(categories)); }
+    function saveBooks() { localStorage.setItem("tor_lib_books_v4", JSON.stringify(books)); }
+    function saveAnalytics() { localStorage.setItem("tor_lib_analytics_v2", JSON.stringify(analytics)); }
+
+    function refreshCategoriesUI() {
+      renderPills();
+      populateCategoryDropdown();
+      renderCategoryManageList();
+      document.getElementById("statKategori").textContent = categories.length;
+    }
+
+    function openCategoryModal() {
+      document.getElementById("newCategoryInput").value = "";
+      renderCategoryManageList();
+      document.getElementById("categoryModal").classList.add("show");
+    }
+    function closeCategoryModal() { document.getElementById("categoryModal").classList.remove("show"); }
+
+    function addNewCategory() {
+      const input = document.getElementById("newCategoryInput");
+      const newCat = input.value.trim();
+      if (!newCat) return alert("Ketik nama rumpun keilmuan!");
+      if (categories.some(c => c.toLowerCase() === newCat.toLowerCase())) {
+        return alert("Rumpun tersebut sudah ada!");
+      }
+      categories.push(newCat);
+      saveCategories();
+      refreshCategoriesUI();
+      input.value = "";
+      addLog("Tambah Rumpun", newCat, newCat);
+    }
+
+    function deleteCategory(catName) {
+      if (confirm(`Hapus rumpun "${catName}"?`)) {
+        categories = categories.filter(c => c !== catName);
+        if (currentCategory === catName) currentCategory = "Semua";
+        saveCategories();
+        refreshCategoriesUI();
+        renderApp();
+      }
+    }
+
+    function renderCategoryManageList() {
+      document.getElementById("categoryManageList").innerHTML = categories.map(cat => `
+        <li class="cat-item">
+          <span>${escapeHtml(cat)}</span>
+          <button class="btn-del-cat" onclick="deleteCategory('${escapeJs(cat)}')">Hapus</button>
+        </li>
+      `).join("");
+    }
+
+    function renderPills() {
+      const list = ["Semua", ...categories];
+      document.getElementById("categoryPills").innerHTML = list.map(c => `
+        <button class="pill ${currentCategory === c ? 'active' : ''}" onclick="selectCategory('${escapeJs(c)}')">
+          ${escapeHtml(c)}
+        </button>
+      `).join("");
+    }
+
+    function populateCategoryDropdown() {
+      document.getElementById("bookCategory").innerHTML = categories.map(c => `
+        <option value="${escapeHtml(c)}">${escapeHtml(c)}</option>
+      `).join("");
+    }
+
+    function selectCategory(cat) {
+      currentCategory = cat;
+      renderPills();
+      renderApp();
+    }
+
+    function recordPageVisit() {
+      const today = new Date().toISOString().slice(0, 10);
+      if (analytics.lastVisitDate !== today) {
+        analytics.todayVisits = 1;
+        analytics.lastVisitDate = today;
+      } else {
+        analytics.todayVisits = (analytics.todayVisits || 0) + 1;
+      }
+      analytics.totalVisits = (analytics.totalVisits || 0) + 1;
+      addLog("Kunjungan Web", "Membuka Beranda Perpustakaan", "-");
+      saveAnalytics();
+    }
+
+    function addLog(action, detail, category) {
+      const now = new Date();
+      const timeStr = `${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')} - ${now.getDate()}/${now.getMonth()+1}`;
+      analytics.logs.unshift({ time: timeStr, action: action, detail: detail, category: category || "-" });
+      if (analytics.logs.length > 80) analytics.logs.pop();
+      saveAnalytics();
+    }
+
+    function trackRead(id, encodedUrl, title) {
+      const book = books.find(b => b.id === id);
+      if (book) {
+        book.readCount = (book.readCount || 0) + 1;
+        saveBooks();
+        addLog("Baca Online", book.title, book.category);
+      }
+      renderApp();
+      openReader(encodedUrl, title);
+    }
+
+    function trackDownload(id) {
+      const book = books.find(b => b.id === id);
+      if (book) {
+        book.downloadCount = (book.downloadCount || 0) + 1;
+        saveBooks();
+        addLog("Download PDF", book.title, book.category);
+      }
+      renderApp();
+    }
+
+    function parseGdriveLinks(url) {
+      if (!url) return { viewUrl: "", downloadUrl: "" };
+      const cleanUrl = url.trim();
+      const m = cleanUrl.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || cleanUrl.match(/id=([a-zA-Z0-9_-]+)/);
+      if (m && m[1]) {
+        return {
+          viewUrl: `https://drive.google.com/file/d/${m[1]}/preview`,
+          downloadUrl: `https://drive.google.com/uc?export=download&id=${m[1]}`
+        };
+      }
+      return { viewUrl: cleanUrl, downloadUrl: cleanUrl };
+    }
+
+    function renderApp() {
+      const filtered = books.filter(b => {
+        const matchCat = (currentCategory === "Semua") || (b.category === currentCategory);
+        const matchQuery = !searchQuery ||
+          b.title.toLowerCase().includes(searchQuery) ||
+          b.author.toLowerCase().includes(searchQuery) ||
+          b.category.toLowerCase().includes(searchQuery) ||
+          (b.desc && b.desc.toLowerCase().includes(searchQuery));
+        return matchCat && matchQuery;
+      });
+
+      const totalReads = books.reduce((acc, curr) => acc + (curr.readCount || 0), 0);
+      const totalDownloads = books.reduce((acc, curr) => acc + (curr.downloadCount || 0), 0);
+      const pdfCount = books.filter(b => b.pdfUrl && b.pdfUrl.trim() !== "").length;
+
+      document.getElementById("statTotal").textContent = books.length;
+      document.getElementById("statPdf").textContent = pdfCount;
+      document.getElementById("statReads").textContent = totalReads;
+      document.getElementById("statDownloads").textContent = totalDownloads;
+      document.getElementById("quickVisitors").textContent = analytics.todayVisits || 0;
+      document.getElementById("quickReads").textContent = totalReads;
+      document.getElementById("collectionCount").textContent = `${filtered.length} koleksi ditampilkan`;
+
+      const grid = document.getElementById("booksGrid");
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 48px 16px; color: var(--text-muted); border: 1px dashed var(--card-border); border-radius: 12px;">
+            <h3>Tidak ada bahan ajar yang cocok</h3>
+            <p style="margin-top: 6px;">Silakan pilih rumpun keilmuan lain atau tambah modul baru.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(b => {
+        const parsed = parseGdriveLinks(b.pdfUrl);
+        const hasPdf = Boolean(parsed.viewUrl);
+        return `
+          <div class="book-card">
+            <div class="book-banner">
+              <span class="badge-category">${escapeHtml(b.category)}</span>
+              <h3>${escapeHtml(b.title)}</h3>
+            </div>
+            <div class="book-body">
+              <div class="book-subtitle">${escapeHtml(b.title)}</div>
+              <div class="book-author">${escapeHtml(b.author)}</div>
+              <div class="book-year">Tahun: ${b.year || '2026'}</div>
+              <p class="book-desc">${escapeHtml(b.desc || 'Belum ada ringkasan materi.')}</p>
+              <div class="book-stats">
+                <span>👁 ${b.readCount || 0} dibaca</span>
+                <span>⬇ ${b.downloadCount || 0} diunduh</span>
+              </div>
+              <div class="book-actions">
+                ${hasPdf ? `
+                  <button class="btn-card-read" onclick="trackRead('${b.id}', '${encodeURIComponent(parsed.viewUrl)}', '${escapeJs(b.title)}')">📖 Baca Online</button>
+                  <a href="${parsed.downloadUrl}" target="_blank" download class="btn-card-download" onclick="trackDownload('${b.id}')">⬇ Download</a>
+                ` : `
+                  <button class="btn-card-read" style="opacity: 0.45; cursor: not-allowed;">📖 Belum Ada PDF</button>
+                  <button class="btn-card-download" style="opacity: 0.45; cursor: not-allowed;">⬇ Download</button>
+                `}
+                <button class="btn-card-delete" onclick="deleteBook('${b.id}')">Hapus</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function openAddModal() {
+      document.getElementById("modalTitle").textContent = "Tambah Koleksi Modul";
+      document.getElementById("bookId").value = "";
+      document.getElementById("bookTitle").value = "";
+      document.getElementById("bookAuthor").value = "Poltekad Kodiklatad";
+      document.getElementById("bookYear").value = "2026";
+      document.getElementById("bookPdf").value = "";
+      document.getElementById("bookDesc").value = "";
+      document.getElementById("bookModal").classList.add("show");
+    }
+    function closeBookModal() { document.getElementById("bookModal").classList.remove("show"); }
+
+    function saveBook(e) {
+      e.preventDefault();
+      const newBook = {
+        id: Date.now().toString(),
+        title: document.getElementById("bookTitle").value.trim(),
+        category: document.getElementById("bookCategory").value,
+        author: document.getElementById("bookAuthor").value.trim(),
+        year: document.getElementById("bookYear").value.trim(),
+        pdfUrl: document.getElementById("bookPdf").value.trim(),
+        desc: document.getElementById("bookDesc").value.trim(),
+        readCount: 0,
+        downloadCount: 0
+      };
+      books.unshift(newBook);
+      saveBooks();
+      addLog("Tambah Modul", newBook.title, newBook.category);
+      closeBookModal();
+      renderApp();
+    }
+
+    function deleteBook(id) {
+      const target = books.find(b => b.id === id);
+      if (confirm(`Hapus bahan ajar "${target.title}"?`)) {
+        books = books.filter(b => b.id !== id);
+        saveBooks();
+        renderApp();
+      }
+    }
+
+    function resetDefaultData() {
+      if (confirm("Reset ulang seluruh daftar buku ke data standar Google Drive?")) {
+        categories = [...INITIAL_CATEGORIES];
+        books = [...DRIVE_BOOKS];
+        saveCategories();
+        saveBooks();
+        refreshCategoriesUI();
+        renderApp();
+      }
+    }
+
+    function openReader(encodedUrl, title) {
+      document.getElementById("viewerTitle").textContent = `Membaca: ${title}`;
+      document.getElementById("viewerIframe").src = decodeURIComponent(encodedUrl);
+      document.getElementById("viewerModal").classList.add("show");
+    }
+    function closeViewerModal() {
+      document.getElementById("viewerIframe").src = "about:blank";
+      document.getElementById("viewerModal").classList.remove("show");
+    }
+
+    function openMonitorModal() {
+      const totalReads = books.reduce((acc, curr) => acc + (curr.readCount || 0), 0);
+      const totalDownloads = books.reduce((acc, curr) => acc + (curr.downloadCount || 0), 0);
+      document.getElementById("mTotalVisits").textContent = analytics.totalVisits || 0;
+      document.getElementById("mTodayVisits").textContent = analytics.todayVisits || 0;
+      document.getElementById("mTotalReads").textContent = totalReads;
+      document.getElementById("mTotalDownloads").textContent = totalDownloads;
+
+      const sorted = [...books].sort((a,b) => ((b.readCount||0)+(b.downloadCount||0)) - ((a.readCount||0)+(a.downloadCount||0))).slice(0, 5);
+      const maxScore = Math.max(1, ...sorted.map(b => (b.readCount||0)+(b.downloadCount||0)));
+
+      document.getElementById("topBooksContainer").innerHTML = sorted.map(b => {
+        const score = (b.readCount||0) + (b.downloadCount||0);
+        const percent = Math.round((score / maxScore) * 100);
+        return `
+          <div style="margin-bottom: 10px;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+              <span><strong>${escapeHtml(b.title)}</strong> (${escapeHtml(b.category)})</span>
+              <span style="color: #9cb4d4;">${b.readCount||0} Baca • ${b.downloadCount||0} Unduh</span>
+            </div>
+            <div class="bar-container"><div class="bar-fill" style="width: ${percent}%;"></div></div>
+          </div>
+        `;
+      }).join("");
+
+      document.getElementById("logTableBody").innerHTML = (analytics.logs || []).slice(0, 15).map(l => `
+        <tr>
+          <td>${l.time}</td>
+          <td><span style="background: #14355e; padding: 2px 7px; border-radius: 4px; font-weight:600;">${l.action}</span></td>
+          <td>${escapeHtml(l.detail)}</td>
+          <td>${escapeHtml(l.category)}</td>
+        </tr>
+      `).join("");
+      document.getElementById("monitorModal").classList.add("show");
+    }
+    function closeMonitorModal() { document.getElementById("monitorModal").classList.remove("show"); }
+
+    function exportLogCSV() {
+      if (!analytics.logs || analytics.logs.length === 0) return alert("Belum ada log!");
+      let csv = "Waktu,Aksi,Detail_Modul,Rumpun_Keilmuan\n";
+      analytics.logs.forEach(l => {
+        csv += `"${l.time}","${l.action}","${(l.detail||'').replace(/"/g, '""')}","${l.category}"\n`;
+      });
+      downloadFile(csv, `log_pengunjung_${new Date().toISOString().slice(0,10)}.csv`);
+    }
+
+    function showLogoFallback() {
+      document.getElementById("logoImg").style.display = "none";
+      document.getElementById("logoFallback").style.display = "flex";
+    }
+    function triggerLogoUpload() { document.getElementById("logoFileInput").click(); }
+    function handleLogoUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const base64 = evt.target.result;
+        document.getElementById("logoImg").src = base64;
+        document.getElementById("logoImg").style.display = "block";
+        document.getElementById("logoFallback").style.display = "none";
+        localStorage.setItem("tor_lib_logo_custom", base64);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function exportCSV() {
+      if (books.length === 0) return alert("Tidak ada data untuk diekspor!");
+      let csv = "judul,kategori,penulis,tahun,deskripsi,pdfUrl\n";
+      books.forEach(b => {
+        csv += `"${(b.title||'').replace(/"/g,'""')}","${b.category}","${(b.author||'').replace(/"/g,'""')}","${b.year||'2026'}","${(b.desc||'').replace(/"/g,'""')}","${b.pdfUrl||''}"\n`;
+      });
+      downloadFile(csv, `koleksi_perpustakaan_${new Date().toISOString().slice(0,10)}.csv`);
+    }
+
+    function downloadFile(content, fileName) {
+      const blob = new Blob([content], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = fileName;
+      link.click();
+    }
+
+    function triggerImportCSV() { document.getElementById("csvFileInput").click(); }
+    function handleCSVFile(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) { parseAndLoadCSV(evt.target.result); };
+      reader.readAsText(file);
+      e.target.value = "";
+    }
+
+    function parseAndLoadCSV(text) {
+      const lines = text.split(/\r?\n/).filter(l => l.trim() !== "");
+      if (lines.length <= 1) return alert("File CSV tidak berisi data!");
+
+      const parseLine = (str) => {
+        let p = '', r = [], q = false;
+        for (let i = 0; i < str.length; i++) {
+          const c = str[i], next = str[i+1];
+          if (c === '"') {
+            if (q && next === '"') { p += '"'; i++; } else { q = !q; }
+          } else if (c === ',' && !q) {
+            r.push(p); p = '';
+          } else { p += c; }
+        }
+        r.push(p); return r;
+      };
+
+      let count = 0;
+      for (let i = 1; i < lines.length; i++) {
+        const cols = parseLine(lines[i]);
+        if (cols.length >= 2 && cols[0].trim()) {
+          const cat = cols[1] ? cols[1].trim() : "Lainnya";
+          if (!categories.includes(cat) && cat !== "") categories.push(cat);
+          books.unshift({
+            id: Date.now() + "_" + i,
+            title: cols[0].trim(),
+            category: cat,
+            author: cols[2] ? cols[2].trim() : "Poltekad Kodiklatad",
+            year: cols[3] ? cols[3].trim() : "2026",
+            desc: cols[4] ? cols[4].trim() : "",
+            pdfUrl: cols[5] ? cols[5].trim() : "",
+            readCount: 0,
+            downloadCount: 0
+          });
+          count++;
+        }
+      }
+      saveCategories();
+      saveBooks();
+      refreshCategoriesUI();
+      renderApp();
+      addLog("Import CSV", `Mengimpor ${count} bahan ajar`, "Sistem");
+      alert(`Berhasil mengimpor ${count} bahan ajar!`);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return "";
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+
+    function escapeJs(str) {
+      if (!str) return "";
+      return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+
+</body></html>
